@@ -1,0 +1,1 @@
+library epub_reader;
