@@ -1,0 +1,7 @@
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+img {
+  max-width: calc(100vw - 30px)
+}

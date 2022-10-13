@@ -1,4 +1,10 @@
 # This is a generated file; do not edit or check into version control.
+path_provider=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.11/
+path_provider_android=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.20/
+path_provider_ios=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_ios-2.0.11/
+path_provider_linux=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.7/
+path_provider_macos=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.6/
+path_provider_windows=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.3/
 webview_flutter=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-3.0.4/
 webview_flutter_android=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_android-2.10.4/
 webview_flutter_wkwebview=/Users/temirlan/development/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter_wkwebview-2.9.5/
