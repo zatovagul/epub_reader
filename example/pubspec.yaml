@@ -19,6 +19,8 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+  epub_reader:
+    path: ../
 
 flutter:
   uses-material-design: true
