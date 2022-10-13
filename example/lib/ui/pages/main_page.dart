@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:epub_reader/epub_reader.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../constants/app_files.dart';
 
@@ -20,7 +21,7 @@ class _MainPageState extends State<MainPage> {
     return bytes.buffer.asUint8List();
   }
 
-  Uint8List? bytes;
+  File? file;
 
   @override
   void initState() {
@@ -30,17 +31,25 @@ class _MainPageState extends State<MainPage> {
   }
 
   void _getBook() async {
-    bytes = await _loadFromAssets(AppFiles.test2);
+    final bytes = await _loadFromAssets(AppFiles.testBook);
+    final buffer = bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.length);
+
+    final fileName = AppFiles.test2.split('/').last;
+    final file = File('${(await getTemporaryDirectory()).path}/$fileName');
+
+    await file.writeAsBytes(buffer);
+
+    this.file = file;
     setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    if (bytes == null) return const SizedBox();
+    if (file == null) return const SizedBox();
     return Scaffold(
       body: SafeArea(
         child: EpubReaderView(
-          bytes: bytes!,
+          file: file!,
         ),
       ),
     );

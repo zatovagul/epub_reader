@@ -14,10 +14,10 @@ import 'local_server_controller.dart';
 import 'logger.dart';
 
 class EpubReaderView extends StatefulWidget {
-  final Uint8List bytes;
+  final File file;
   const EpubReaderView({
     Key? key,
-    required this.bytes,
+    required this.file,
   }) : super(key: key);
 
   @override
@@ -31,6 +31,8 @@ class _EpubReaderViewState extends State<EpubReaderView> {
   }
 
   EpubBookRef? _epubBookRef;
+
+  late WebViewController _webViewController;
 
   @override
   void initState() {
@@ -63,7 +65,7 @@ class _EpubReaderViewState extends State<EpubReaderView> {
 
   /// Открываем книгу
   _getBook() async {
-    _epubBookRef = await EpubReader.openBook(widget.bytes);
+    _epubBookRef = await EpubReader.openBook(widget.file.readAsBytes());
     setState(() {});
   }
 
@@ -80,7 +82,7 @@ class _EpubReaderViewState extends State<EpubReaderView> {
     return const SizedBox();
   }
 
-  late WebViewController _webViewController;
+  
   _onControllerCreated(WebViewController controller) async {
     _webViewController = controller;
 
